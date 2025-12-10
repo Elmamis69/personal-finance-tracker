@@ -71,7 +71,7 @@ class InfluxService:
         query = f'''
         from(bucket: "{settings.influxdb_bucket}")
             |> range(start: {start_date.isoformat()}Z, stop: {end_date.isoformat()}Z)
-            |> filter(fn: (r) => r["_measurement"] == "transaction")
+            |> filter(fn: (r) => r["_measurement"] == "transactions")
             |> filter(fn: (r) => r["type"] == "expense")
             |> filter(fn: (r) => r["_field"] == "amount")
             |> aggregateWindow(every: {interval}, fn: sum, createEmpty: false)
@@ -107,7 +107,7 @@ class InfluxService:
         query = f'''
         from(bucket: "{settings.influxdb_bucket}")
             |> range(start: {start_date.isoformat()}Z, stop: {end_date.isoformat()}Z)
-            |> filter(fn: (r) => r["_measurement"] == "transaction")
+            |> filter(fn: (r) => r["_measurement"] == "transactions")
             |> filter(fn: (r) => r["type"] == "expense")
             |> filter(fn: (r) => r["_field"] == "amount")
             |> group(columns: ["category"])
@@ -122,7 +122,7 @@ class InfluxService:
             for record in table.records:
                 data.append({
                     "category": record.values.get("category"),
-                    "amount": record.get_value()
+                    "total_amount": record.get_value()
                 })
 
         return data
@@ -142,20 +142,20 @@ class InfluxService:
         query_api = get_query_api()
         
         # Query for total income
-        query = f'''
+        income_query = f'''
         from(bucket: "{settings.influxdb_bucket}")
             |> range(start: {start_date.isoformat()}Z, stop: {end_date.isoformat()}Z)
-            |> filter(fn: (r) => r["_measurement"] == "transaction")
+            |> filter(fn: (r) => r["_measurement"] == "transactions")
             |> filter(fn: (r) => r["type"] == "income")
             |> filter(fn: (r) => r["_field"] == "amount")
             |> sum()
         '''
 
         # Query for total expenses
-        expense_query = f'''
+        expenses_query = f'''
         from(bucket: "{settings.influxdb_bucket}")
             |> range(start: {start_date.isoformat()}Z, stop: {end_date.isoformat()}Z)
-            |> filter(fn: (r) => r["_measurement"] == "transaction")
+            |> filter(fn: (r) => r["_measurement"] == "transactions")
             |> filter(fn: (r) => r["type"] == "expense")
             |> filter(fn: (r) => r["_field"] == "amount")
             |> sum()
