@@ -136,10 +136,10 @@ docker-compose down -v
 - [x] Estructura de carpetas
 - [x] Docker Compose (MongoDB, InfluxDB, Grafana)
 - [x] Requirements y configuración inicial
-- [ ] `app/core/config.py` - Configuración con Pydantic Settings
-- [ ] `app/db/mongodb.py` - Conexión MongoDB con Motor
-- [ ] `app/db/influxdb.py` - Cliente InfluxDB
-- [ ] `app/main.py` - FastAPI app básica
+- [x] `app/core/config.py` - Configuración con Pydantic Settings
+- [x] `app/db/mongodb.py` - Conexión MongoDB con Motor
+- [x] `app/db/influxdb.py` - Cliente InfluxDB
+- [x] `app/main.py` - FastAPI app básica
 
 ### Fase 2: Modelos de Datos
 - [ ] `app/models/transaction.py` - Modelo de transacciones
