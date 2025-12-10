@@ -14,7 +14,7 @@ services:
       - mongodb_data:/data/db
     networks:
       - finance-network
-
+ 
   # InfluxDB - Time series database
   influxdb:
     image: influxdb:2.7
