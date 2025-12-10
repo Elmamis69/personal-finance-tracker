@@ -132,7 +132,7 @@ docker-compose down -v
 
 ## 🗺️ Roadmap del Proyecto
 
-### Fase 1: Configuración Base
+### Fase 1: Configuración Base 
 - [x] Estructura de carpetas
 - [x] Docker Compose (MongoDB, InfluxDB, Grafana)
 - [x] Requirements y configuración inicial
