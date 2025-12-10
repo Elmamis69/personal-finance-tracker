@@ -88,7 +88,7 @@ class InfluxService:
                     "amount": record.get_value()
                 })
 
-        return data
+        return data_points
     
     @staticmethod
     def get_category_breakdown(start_date: datetime, end_date: datetime):
