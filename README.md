@@ -147,13 +147,13 @@ docker-compose down -v
 - [x] Enums para categorías y tipos
 
 ### Fase 3: API Endpoints - Transacciones
-- [ ] `app/api/v1/endpoints/health.py` - Health check
-- [ ] `app/api/v1/endpoints/transactions.py` - CRUD básico
-- [ ] POST /transactions - Crear transacción
-- [ ] GET /transactions - Listar con filtros
-- [ ] GET /transactions/{id} - Obtener por ID
-- [ ] PUT /transactions/{id} - Actualizar
-- [ ] DELETE /transactions/{id} - Eliminar
+- [x] `app/api/v1/endpoints/health.py` - Health check
+- [x] `app/api/v1/endpoints/transactions.py` - CRUD básico
+- [x] POST /transactions - Crear transacción
+- [x] GET /transactions - Listar con filtros
+- [x] GET /transactions/{id} - Obtener por ID
+- [x] PUT /transactions/{id} - Actualizar
+- [x] DELETE /transactions/{id} - Eliminar
 
 ### Fase 4: API Endpoints - Presupuestos
 - [ ] `app/api/v1/endpoints/budgets.py` - CRUD presupuestos

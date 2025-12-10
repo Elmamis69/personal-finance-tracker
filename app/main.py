@@ -5,6 +5,7 @@ from contextlib import asynccontextmanager
 from app.core.config import settings
 from app.db.mongodb import connect_to_mongodb, close_mongodb_connection
 from app.db.influxdb import connect_to_influxdb, close_influxdb_connection
+from app.api.v1 import api_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -33,6 +34,9 @@ app.add_middleware(
     allow_methods = ["*"],
     allow_headers = ["*"],
 )
+
+# Include API router
+app.include_router(api_router, prefix=settings.api_v1_prefix)
 
 @app.get("/")
 async def root():
