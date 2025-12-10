@@ -15,7 +15,7 @@ def connect_to_influxdb():
     influxdb.client = InfluxDBClient(
         url=settings.influxdb_url,
         token=settings.influxdb_token,
-        org=settings.influxdb_org
+        org = settings.influxdb_org
     )
     influxdb.write_api = influxdb.client.write_api(write_options=SYNCHRONOUS)
     influxdb.query_api = influxdb.client.query_api()
