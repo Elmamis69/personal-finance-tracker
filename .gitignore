@@ -22,7 +22,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-
+ 
 # Environment
 .env
 .env.local
