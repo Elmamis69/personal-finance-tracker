@@ -186,7 +186,7 @@ async def get_budget(
 
     return BudgetResponse(**budget_data)
 
-@router.get("/{budget_id}/progress", response_model = BudgetResponse)
+@router.get("/{budget_id}/progress", response_model = BudgetProgress)
 async def get_budget_progress(budget_id: str):
     """
     Get budget progress (spent, remaining, percentage, status)
