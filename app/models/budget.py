@@ -66,17 +66,18 @@ class BudgetInDB(BudgetBase):
             }
         }
 
-class BudgetResponse(BudgetInDB):
-    """Budget response information"""
+class BudgetProgress(BaseModel):
+    """Budget progress information"""
     spent_amount: float = Field(..., description="Amount spent in this budget period")
-    raminging_amount: float = Field(..., description="Remaining budget amount")
+    remaining_amount: float = Field(..., description="Remaining budget amount")
     percentage_used: float = Field(..., description="Percentage of budget used (0-100+)")
     status: BudgetStatus = Field(..., description="Budget status")
     is_over_budget: bool = Field(..., description="Whether budget has been exceeded")
 
+
 class BudgetResponse(BudgetInDB):
     """Budget response model with optional progress"""
-    progress: Optional[float] = Field(None, description="Budget progress (if calculated)")
+    progress: Optional[BudgetProgress] = Field(None, description="Budget progress (if calculated)")
 
     class Config:
         json_schema_extra = {
