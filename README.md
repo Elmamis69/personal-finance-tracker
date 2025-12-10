@@ -198,6 +198,3 @@ docker-compose down -v
 - [ ] Documentación de API mejorada
 - [ ] Ejemplos de uso en README
 
-## 🤝 Contribución
-
-Este es un proyecto personal de aprendizaje.
