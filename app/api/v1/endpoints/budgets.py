@@ -29,11 +29,11 @@ def budget_helper(budget) -> dict:
         "updated_at": budget.get("updated_at", datetime.utcnow())
     }
 
-async def calculate_budget_progress(budget_id: str) -> BudgetProgress:
+async def calculate_budget_progress(budget_id: str, budget: dict) -> BudgetProgress:
     """Calculate budget progress based on transactions"""
     db = get_database()
 
-    #Query transactions for this budget's category and date range
+    # Query transactions for this budget's category and date range
     query = {
         "type": TransactionType.EXPENSE,
         "category": budget["category"],
