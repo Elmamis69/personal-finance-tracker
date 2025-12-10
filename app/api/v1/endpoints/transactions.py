@@ -12,6 +12,8 @@ from app.models.transaction import (
 )
 from app.db.mongodb import get_database
 
+from app.services.influx_service import influx_service
+
 router = APIRouter()
 
 def transaction_helper(transaction) -> dict:
@@ -28,28 +30,27 @@ def transaction_helper(transaction) -> dict:
         "updated_at": transaction.get("updated_at", datetime.utcnow())
     }
 
-@router.post("/", response_model=TransactionResponse, status_code = status.HTTP_201_CREATED)
+@router.post("/", response_model=TransactionResponse, status_code=status.HTTP_201_CREATED)
 async def create_transaction(transaction: TransactionCreate):
-    """
-    Create a new transaction
-    
-    - **amount**: Transaction amount (must be positive)
-    - **type**: income or expense
-    - **category**: Transaction category
-    - **description**: Transaction description
-    - **date**: Transaction date (defaults to now)
-    - **tags**: Optional tags
-    """
+    """Create a new transaction"""
     db = get_database()
-
-    transaction_dict = transaction.dict()
+    
+    transaction_dict = transaction.model_dump()
     transaction_dict["created_at"] = datetime.utcnow()
     transaction_dict["updated_at"] = datetime.utcnow()
-
+    
     result = await db.transactions.insert_one(transaction_dict)
-
     created_transaction = await db.transactions.find_one({"_id": result.inserted_id})
-
+    
+    # Write metric to InfluxDB
+    influx_service.write_transaction_metric(
+        transaction_id=str(result.inserted_id),
+        amount=transaction.amount,
+        transaction_type=transaction.type,
+        category=transaction.category.value,
+        date=transaction.date
+    )
+    
     return TransactionResponse(**transaction_helper(created_transaction))
 
 @router.get("/", response_model=list[TransactionResponse])
