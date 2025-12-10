@@ -142,9 +142,9 @@ docker-compose down -v
 - [x] `app/main.py` - FastAPI app básica
 
 ### Fase 2: Modelos de Datos
-- [ ] `app/models/transaction.py` - Modelo de transacciones
-- [ ] `app/models/budget.py` - Modelo de presupuestos
-- [ ] Enums para categorías y tipos
+- [x] `app/models/transaction.py` - Modelo de transacciones
+- [x] `app/models/budget.py` - Modelo de presupuestos
+- [x] Enums para categorías y tipos
 
 ### Fase 3: API Endpoints - Transacciones
 - [ ] `app/api/v1/endpoints/health.py` - Health check
