@@ -165,14 +165,14 @@ docker-compose down -v
 - [x] DELETE /budgets/{id} - Eliminar presupuesto
 
 ### Fase 5: Integración con InfluxDB
-- [ ] `app/services/influx_service.py` - Servicio para métricas
-- [ ] Escribir métricas al crear/actualizar transacciones
-- [ ] Métricas: gastos diarios, por categoría, ingresos
-- [ ] `app/api/v1/endpoints/analytics.py` - Endpoints de analytics
-- [ ] GET /analytics/spending-trend - Tendencia de gastos
-- [ ] GET /analytics/category-breakdown - Gastos por categoría
-- [ ] GET /analytics/monthly-comparison - Comparación mensual
-- [ ] GET /analytics/savings-rate - Tasa de ahorro
+- [x] `app/services/influx_service.py` - Servicio para métricas
+- [x] Escribir métricas al crear/actualizar transacciones
+- [x] Métricas: gastos diarios, por categoría, ingresos
+- [x] `app/api/v1/endpoints/analytics.py` - Endpoints de analytics
+- [x] GET /analytics/spending-trend - Tendencia de gastos
+- [x] GET /analytics/category-breakdown - Gastos por categoría
+- [x] GET /analytics/monthly-comparison - Comparación mensual
+- [x] GET /analytics/savings-rate - Tasa de ahorro
 
 ### Fase 6: Dashboards en Grafana
 - [ ] Configurar datasource de InfluxDB
