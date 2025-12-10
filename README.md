@@ -156,13 +156,13 @@ docker-compose down -v
 - [x] DELETE /transactions/{id} - Eliminar
 
 ### Fase 4: API Endpoints - Presupuestos
-- [ ] `app/api/v1/endpoints/budgets.py` - CRUD presupuestos
-- [ ] POST /budgets - Crear presupuesto mensual
-- [ ] GET /budgets - Listar presupuestos
-- [ ] GET /budgets/{id} - Obtener presupuesto
-- [ ] GET /budgets/{id}/progress - Progreso vs límite
-- [ ] PUT /budgets/{id} - Actualizar presupuesto
-- [ ] DELETE /budgets/{id} - Eliminar presupuesto
+- [x] `app/api/v1/endpoints/budgets.py` - CRUD presupuestos
+- [x] POST /budgets - Crear presupuesto mensual
+- [x] GET /budgets - Listar presupuestos
+- [x] GET /budgets/{id} - Obtener presupuesto
+- [x] GET /budgets/{id}/progress - Progreso vs límite
+- [x] PUT /budgets/{id} - Actualizar presupuesto
+- [x] DELETE /budgets/{id} - Eliminar presupuesto
 
 ### Fase 5: Integración con InfluxDB
 - [ ] `app/services/influx_service.py` - Servicio para métricas
