@@ -161,8 +161,8 @@ class InfluxService:
             |> sum()
         '''
 
-        income_result = query_api.query(org = settings.influxdb_org, query = query)
-        expense_result = query_api.query(org = settings.influxdb_org, query = expense_query)
+        income_result = query_api.query(org = settings.influxdb_org, query = income_query)
+        expenses_result = query_api.query(org = settings.influxdb_org, query = expenses_query)
 
         total_income = 0
         for table in income_result:
@@ -170,7 +170,7 @@ class InfluxService:
                 total_income = record.get_value()
         
         total_expenses = 0
-        for table in expense_result:
+        for table in expenses_result:
             for record in table.records:
                 total_expenses = record.get_value()
 
