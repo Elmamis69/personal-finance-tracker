@@ -38,6 +38,13 @@ Esto levantará:
 
 - **API Docs**: http://localhost:8000/docs
 - **Grafana**: http://localhost:3000 (admin/admin)
+
+## 📖 Documentación
+
+- **[API Documentation](./API_DOCUMENTATION.md)** - Guía completa de la API con ejemplos
+- **[Testing Guide](./TESTING.md)** - Documentación de tests y cobertura
+- **Swagger UI**: http://localhost:8000/docs - Documentación interactiva
+- **ReDoc**: http://localhost:8000/redoc - Documentación alternativa
 - **InfluxDB UI**: http://localhost:8086 (admin/adminpassword)
 
 ## 📁 Estructura del Proyecto
