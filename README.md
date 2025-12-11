@@ -182,9 +182,48 @@ docker-compose down -v
 - [x] Dashboard: Balance Total (stat)
 
 ### Fase 7: Testing y Documentación
-- [ ] Tests unitarios para modelos
-- [ ] Tests de integración para endpoints
-- [ ] Tests para servicios de InfluxDB
-- [ ] Documentación de API mejorada
-- [ ] Ejemplos de uso en README
+- [x] Tests unitarios para modelos (Transaction, Budget)
+- [x] Tests de integración para endpoints (Health, Transactions, Budgets, Analytics)
+- [x] Tests para servicios de InfluxDB
+- [x] Configuración de pytest con fixtures async
+- [x] Documentación de tests en TESTING.md
+
+## 🧪 Testing
+
+### Ejecutar Tests
+
+```bash
+# Activar entorno virtual
+source .venv/bin/activate
+
+# Instalar dependencias
+pip install -r requirements.txt
+
+# Ejecutar solo tests unitarios (no requieren Docker)
+pytest tests/unit -v
+
+# Ejecutar tests de integración (requieren Docker corriendo)
+docker-compose up -d
+pytest tests/integration -v
+
+# Ejecutar todos los tests
+pytest -v
+
+# Ejecutar con cobertura
+pytest --cov=app --cov-report=html tests/
+```
+
+### Resultados de Tests
+
+✅ **25/25 tests unitarios pasando**
+- 13 tests para Transaction model
+- 12 tests para Budget model
+
+📝 **Tests de integración creados**
+- Health endpoints (3 tests)
+- Transactions CRUD + filtros (10+ tests)
+- Budgets CRUD + progreso (11+ tests)
+- Analytics endpoints (6+ tests)
+
+Ver documentación completa en [`TESTING.md`](./TESTING.md)
 
