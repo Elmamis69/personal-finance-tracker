@@ -220,17 +220,15 @@ pytest -v
 pytest --cov=app --cov-report=html tests/
 ```
 
-### Resultados de Tests
+## Author
+Adrián Félix
 
-✅ **25/25 tests unitarios pasando**
-- 13 tests para Transaction model
-- 12 tests para Budget model
+Software Engineering
 
-📝 **Tests de integración creados**
-- Health endpoints (3 tests)
-- Transactions CRUD + filtros (10+ tests)
-- Budgets CRUD + progreso (11+ tests)
-- Analytics endpoints (6+ tests)
+Passionate about Android Developer, Full Stack and iOS development and clean architecture.
 
-Ver documentación completa en [`TESTING.md`](./TESTING.md)
+GitHub: @Elmamis69
+Email: guerofelix234@gmail.com
 
+**License**
+This project is licensed under the MIT License.
