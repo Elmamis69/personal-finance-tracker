@@ -175,23 +175,13 @@ docker-compose down -v
 - [x] GET /analytics/savings-rate - Tasa de ahorro
 
 ### Fase 6: Dashboards en Grafana
-- [ ] Configurar datasource de InfluxDB
-- [ ] Dashboard: Gastos vs Ingresos (time series)
-- [ ] Dashboard: Distribución por Categoría (pie chart)
-- [ ] Dashboard: Tendencia de Ahorro (gauge)
-- [ ] Dashboard: Top 5 Categorías del Mes (bar chart)
-- [ ] Dashboard: Budget vs Real por Categoría
-- [ ] Dashboard: Alertas de exceso de presupuesto
+- [x] Configurar datasource de InfluxDB
+- [x] Dashboard: Gastos vs Ingresos (time series)
+- [x] Dashboard: Distribución por Categoría (pie chart)
+- [x] Dashboard: Tendencia de Ahorro (gauge)
+- [x] Dashboard: Balance Total (stat)
 
-### Fase 7: Características Avanzadas
-- [ ] Filtros avanzados en transacciones (fecha, monto, categoría)
-- [ ] Exportar transacciones a CSV
-- [ ] Notificaciones cuando se excede presupuesto
-- [ ] Metas de ahorro
-- [ ] Categorías personalizadas
-- [ ] Multi-moneda
-
-### Fase 8: Testing y Documentación
+### Fase 7: Testing y Documentación
 - [ ] Tests unitarios para modelos
 - [ ] Tests de integración para endpoints
 - [ ] Tests para servicios de InfluxDB
